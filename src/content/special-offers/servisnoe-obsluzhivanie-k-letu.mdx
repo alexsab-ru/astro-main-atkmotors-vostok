@@ -1,0 +1,38 @@
+---
+h1: "Сервисное обслуживание к лету: подготовьте свой Changan к приключениям"
+title: "Сервисное обслуживание к лету: подготовьте свой Changan к приключениям"
+caption: "Сервисное обслуживание к лету: подготовьте свой Changan к приключениям"
+breadcrumb: "Сервисное обслуживание к лету: подготовьте свой Changan к приключениям"
+pubDate: "2025-06-09"
+toDate: true
+image: "https://cdn.alexsab.ru/specials/changan/servisnoe-obsluzhivanie-k-letu/desktop.webp"
+description: "Сервисное обслуживание к лету: подготовьте свой Changan к приключениям"
+---
+import Button from '@/components/Button/Button.astro';
+import SpecialSalonsInfo from '@/components/SpecialSalonsInfo.astro';
+import settings from '@/data/settings.json';
+export const { site_name, phone_common } = settings;
+import { phoneFormat } from '@/js/utils/numbers.format';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+
+export const dateFrom = '01.07.2024';
+export const dateTo = `${LAST_DAY}.${MONTH}.${YEAR}`;
+export const dateToGenitive = `${LAST_DAY} ${MONTH_GENITIVE} ${YEAR}`;
+export const dateToPrepositional = `${MONTH_PREPOSITIONAL} ${YEAR}`;
+
+<picture>
+	<img src="https://cdn.alexsab.ru/specials/changan/servisnoe-obsluzhivanie-k-letu/desktop.webp" class="w-full mb-10" alt="Сервисное обслуживание к лету" />
+</picture>
+
+Лето — это путешествия, новые маршруты и яркие эмоции. Подготовьте свой автомобиль к тёплому сезону с выгодой от CHANGAN!
+
+Приезжайте на регулярное техническое обслуживание и получите в подарок:
+-⁠ проверку тормозной системы;
+-⁠ проверку системы кондиционирования;
+-⁠ ⁠мойку автомобиля.
+
+А также дарим скидку 20% на воздушный фильтр.
+Будьте уверены в своём автомобиле и каждом километре пути!
+Акция действует с 31 мая по 30 июня во всех официальных дилерских центрах CHANGAN
+
+<SpecialSalonsInfo dataFormName="Узнать подробнее. Сервисное обслуживание к лету" />

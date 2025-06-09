@@ -1,0 +1,76 @@
+---
+h1: "Trade-in Changan"
+title: "Trade-in при покупке нового автомобиля Changan"
+caption: "Trade-in Changan"
+breadcrumb: "Trade-in Changan"
+pubDate: "2025-06-09"
+toDate: false
+image: "https://cdn.alexsab.ru/specials/changan/trade-in/desktop.webp"
+description: "Программа Changan Trade-in — условия и скидки при сдаче своего автомобиля в трейд-ин при покупке нового автомобиля Чанган"
+---
+import Button from '@/components/Button/Button.astro';
+import SpecialSalonsInfo from '@/components/SpecialSalonsInfo.astro';
+import settings from '@/data/settings.json';
+export const { site_name, phone_common } = settings;
+import { phoneFormat } from '@/js/utils/numbers.format';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+
+export const dateFrom = '01.07.2024';
+export const dateTo = `${LAST_DAY}.${MONTH}.${YEAR}`;
+export const dateToGenitive = `${LAST_DAY} ${MONTH_GENITIVE} ${YEAR}`;
+export const dateToPrepositional = `${MONTH_PREPOSITIONAL} ${YEAR}`;
+
+<picture>
+	<img src="https://cdn.alexsab.ru/specials/changan/trade-in/desktop.webp" class="w-full mb-10" alt="Trade-in при покупке нового автомобиля Changan" />
+</picture>
+
+Компания Changan сообщает о запуске на территории РФ обновленной программы "Trade-In".
+Предоставляется дополнительная скидка согласно приведенной таблицы:
+<div class="table_wrapper overflow-auto min-w-full my-14">
+	<table class="min-w-full border-collapse">
+		<thead>
+			<tr class="bg-gray-100">
+					<td class="px-6 py-4 border border-gray-200 font-semibold">Автомобиль какой марки сдается в Trade-in</td>
+					<td class="px-6 py-4 border border-gray-200 font-semibold">Модель</td>
+					<td class="px-6 py-4 border border-gray-200 font-semibold">Скидка для клиента</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+					<td rowspan="15" class="px-6 py-4 border border-gray-200 align-top">Changan</td>
+			</tr>
+			<tr class="hover:bg-gray-50"><td class="px-6 py-4 border border-gray-200">CS35 Plus MCA</td><td class="px-6 py-4 border border-gray-200">120 000 ₽</td></tr>
+			<tr class="hover:bg-gray-50"><td class="px-6 py-4 border border-gray-200">CS55 Plus / Uni-S</td><td class="px-6 py-4 border border-gray-200">100 000 ₽</td></tr>
+			<tr class="hover:bg-gray-50"><td class="px-6 py-4 border border-gray-200">Uni-K, Uni-K IDD</td><td class="px-6 py-4 border border-gray-200">140 000 ₽</td></tr>
+			</tbody>
+	</table>
+</div>
+
+<div class="table_wrapper overflow-auto min-w-full my-14">
+	<table class="min-w-full border-collapse">
+		<thead>
+			<tr class="bg-gray-100">
+					<td class="px-6 py-4 border border-gray-200 font-semibold">Автомобиль какой марки сдается в Trade-in</td>
+					<td class="px-6 py-4 border border-gray-200 font-semibold">Модель</td>
+					<td class="px-6 py-4 border border-gray-200 font-semibold">Скидка для клиента</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			</tr><tr>
+					<td rowspan="15" class="px-6 py-4 border border-gray-200 align-top">Автомобили других марок</td>
+			</tr>
+			<tr class="hover:bg-gray-50"><td class="px-6 py-4 border border-gray-200">CS35 Plus MCA</td><td class="px-6 py-4 border border-gray-200">100 000 ₽</td></tr>
+			<tr class="hover:bg-gray-50"><td class="px-6 py-4 border border-gray-200">CS55 Plus / Uni-S</td><td class="px-6 py-4 border border-gray-200">80 000 ₽</td></tr>
+			<tr class="hover:bg-gray-50"><td class="px-6 py-4 border border-gray-200">Uni-K, Uni-K IDD</td><td class="px-6 py-4 border border-gray-200">120 000 ₽</td></tr>
+		</tbody>
+	</table>
+</div>
+
+<SpecialSalonsInfo dataFormName="Узнать подробнее. Сервисное обслуживание к лету" />
+
+>* Срок действия программы Trade-In устанавливается до 30.06.2025 г.
+
+>* К участию в программе Changan Trade-in допускаются автомобили сроком владения последним собственником не менее трех месяцев.
+
+>* Собственником сдаваемого автомобиля и конечным покупателем нового Автомобиля CHANGAN должно быть одно лицо. Допускается заключение сделок в рамках программы Trade-In с лицами, состоящими в браке друг с другом либо в прямом родстве, то есть муж-жена, родители-дети при наличии подтверждающих документов.

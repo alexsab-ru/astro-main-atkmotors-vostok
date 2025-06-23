@@ -40,18 +40,59 @@ def process_permalink(vin):
 
 
 def format_html_for_mdx(raw_html):
+    """
+    Форматирует HTML для MDX, учитывая особенности MDX-парсера:
+    - Удаляет теги <p>, так как MDX сам их добавляет
+    - Заменяет <br/> на перенос строки
+    - Сохраняет форматирующие теги
+    - Добавляет пробелы после закрывающих тегов
+    - Добавляет пробелы перед открывающими тегами
+    - Добавляет пробелы между тегами
+    - Добавляет переносы между списками и жирным текстом
+    """
+    # Проверяем корректность HTML с помощью BeautifulSoup
     soup = BeautifulSoup(raw_html, "html.parser")
     
     # Получаем HTML без форматирования (сохраняет &nbsp;)
     html_output = str(soup)
+
+    print(html_output)
     
     # Экранируем проблемные символы для MDX
     html_output = html_output.replace('\\', '\\\\')  # Экранируем обратные слеши
-    html_output = html_output.replace('{', '\\{')        # Экранируем фигурные скобки
+    html_output = html_output.replace('{', '\\{')    # Экранируем фигурные скобки
     html_output = html_output.replace('}', '\\}')
     
-    html_output = re.sub(r'(<[^>]+>)(<[^>]+>)', r'\1\n\2', html_output)
-    html_output = re.sub(r'(</[^>]+>)(<[^>]+>)', r'\1\n\2', html_output)
+    # Удаляем теги <p> и </p>, так как MDX сам их добавит
+    html_output = re.sub(r'</?p>', '', html_output)
+    
+    # Заменяем <br/> и <br> на перенос строки
+    html_output = re.sub(r'(<br/?>)', r'\1\n', html_output)
+    
+    # Добавляем <br/> между закрывающим списком и тегом жирности
+    html_output = re.sub(r'(</ul>)(<strong>)', r'\1<br/>\2', html_output)
+    
+    # Добавляем пробел после закрывающего тега, если после него идет буква
+    html_output = re.sub(r'(</[^>]+>)([а-яА-Яa-zA-Z])', r'\1 \2', html_output)
+    
+    # Добавляем пробел перед открывающим тегом, если перед ним буква
+    html_output = re.sub(r'([а-яА-Яa-zA-Z])(<[^/][^>]*>)', r'\1 \2', html_output)
+    
+    # Добавляем пробел между двумя тегами
+    html_output = re.sub(r'(>)(<)', r'\1 \2', html_output)
+    
+    # Добавляем переносы строк для лучшей читаемости
+    # 1. Разбиваем на строки по закрывающим тегам </ul>, </li>
+    html_output = re.sub(r'(</ul>|</li>)', r'\1\n', html_output)
+    
+    # 2. Разбиваем на строки по открывающим тегам <ul>, <li>
+    html_output = re.sub(r'(<ul>|<li>)', r'\n\1', html_output)
+    
+    # 3. Удаляем лишние пустые строки
+    # html_output = re.sub(r'\n\s*\n', '\n', html_output)
+    
+    # 4. Удаляем пробелы в начале и конце каждой строки
+    html_output = '\n'.join(line.strip() for line in html_output.split('\n'))
     
     return html_output
 
@@ -59,6 +100,7 @@ def format_html_for_mdx(raw_html):
 def process_description(desc_text):
     """
     Обрабатывает текст описания, добавляя HTML-разметку.
+    Предотвращает вложенные p-теги и проверяет корректность HTML.
     
     Args:
         desc_text (str): Исходный текст описания
@@ -68,35 +110,26 @@ def process_description(desc_text):
     """
     if not desc_text:
         return ""
-        
-    # Заменяем все <br> на <br/>
-    desc_text = desc_text.replace("<br>", "<br/>\n")
     
-    lines = desc_text.split('\n')
-    processed_lines = []
-    
+    pretty_html = format_html_for_mdx(desc_text)
+    # Разбиваем результат на строки
+    lines = pretty_html.split('\n')
+    wrapped_lines = []
     for line in lines:
-        line = line.strip()
-        if not line:
-            processed_lines.append("<p>&nbsp;</p>")
+        # Если строка пустая или состоит только из пробелов, добавляем <p>&nbsp;</p>
+        if not line.strip():
+            wrapped_lines.append('<p>&nbsp;</p>')
             continue
-            
-        # Проверяем, является ли строка HTML-разметкой
-        if line.startswith('<') and line.endswith('>'):
-            # Если это одиночный тег (например, <br/>), оставляем как есть
-            if line.count('<') == 1 and line.count('>') == 1:
-                processed_lines.append(line)
-            # Если это HTML-блок, оборачиваем в <p>
-            else:
-                processed_lines.append(f"<p>{line}</p>")
+        # Если строка начинается с <ul>, <li>, </ul>, </li>, не оборачиваем в <p>
+        if line.lstrip().startswith('<ul>') or line.lstrip().startswith('<li>') or \
+           line.lstrip().startswith('</ul>') or line.lstrip().startswith('</li>'):
+            wrapped_lines.append(line)
         else:
-            # Если это обычный текст, оборачиваем в <p>
-            processed_lines.append(f"<p>{line}</p>")
-    
-    raw_html = '\n'.join(processed_lines)
-    pretty_html = format_html_for_mdx(raw_html)
-            
-    return pretty_html
+            # Оборачиваем в <p>...</p>
+            wrapped_lines.append(f'<p>{line}</p>')
+    # Склеиваем обратно в одну строку с переносами
+    result_html = '\n'.join(wrapped_lines)
+    return result_html
 
 
 def createThumbs(image_urls, friendly_url, current_thumbs, thumbs_dir, skip_thumbs=False):
@@ -466,7 +499,8 @@ def check_local_files(brand, model, color, vin):
             elif os.path.exists(f"public/{thumb_brand_path}"):
                 return f"/{thumb_brand_path}"
             else:
-                print_message(f"Не найден файл `{color_image}` по пути `public/{thumb_path}` или `public/{thumb_brand_path}`", "error")
+                errorText = f"\n<b>Не найден локальный файл</b>\n<pre>{color_image}</pre>\n<code>public/{thumb_path}</code>\n<code>public/{thumb_brand_path}</code>"
+                print_message(errorText)
                 return "https://cdn.alexsab.ru/errors/404.webp"
         else:
             return "https://cdn.alexsab.ru/errors/404.webp"
@@ -486,6 +520,7 @@ def create_file(car, filename, friendly_url, current_thumbs, sort_storage_data, 
     folder = get_folder(brand, model)
     color_image = get_color_filename(brand, model, color)
 
+    thumb = "https://cdn.alexsab.ru/errors/404.webp"
     # Проверка через CDN сервис
     if folder:
         if color_image:
@@ -496,13 +531,13 @@ def create_file(car, filename, friendly_url, current_thumbs, sort_storage_data, 
                     thumb = cdn_path
                 else:
                     # Если файл не найден в CDN, проверяем локальные файлы
-                    errorText = f"Не удалось найти файл {color_image} по пути {cdn_path}. Статус {response.status_code}"
-                    print_message(errorText)
+                    errorText = f"\n<b>Не удалось найти файл на CDN</b>. Статус <b>{response.status_code}</b>\n<pre>{color_image}</pre>\n<a href='{cdn_path}'>{cdn_path}</a>"
+                    print_message(errorText, 'error')
                     thumb = check_local_files(brand, model, color, vin)
             except requests.RequestException as e:
                 # В случае ошибки при проверке CDN, используем локальные файлы
-                errorText = f"Ошибка при проверке CDN: {str(e)}"
-                print_message(errorText)
+                errorText = f"\nОшибка при проверке CDN: {str(e)}"
+                print_message(errorText, 'error')
                 thumb = check_local_files(brand, model, color, vin)
 
     # Forming the YAML frontmatter
@@ -534,7 +569,8 @@ def create_file(car, filename, friendly_url, current_thumbs, sort_storage_data, 
 
     content += f"breadcrumb: {join_car_data(car, 'mark_id', 'folder_id', 'complectation_name')}\n"
 
-    content += f"title: 'Купить {join_car_data(car, 'mark_id', 'folder_id', 'modification_id')} у официального дилера в {config['legal_city_where']}'\n"
+    # Купить {{mark_id}} {{folder_id}} {{modification_id}} {{color}} у официального дилера в {{where}}
+    content += f"title: 'Купить {join_car_data(car, 'mark_id', 'folder_id', 'modification_id', 'color')} у официального дилера в {config['legal_city_where']}'\n"
 
     description = (
         f'Купить автомобиль {join_car_data(car, "mark_id", "folder_id")}'

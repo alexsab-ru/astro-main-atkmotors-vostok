@@ -1,0 +1,36 @@
+---
+h1: "TIGGO 7 PRO PLUG-IN HYBRID – выгода до 1 400 000 руб.*"
+title: "TIGGO 7 PRO PLUG-IN HYBRID – выгода до 1 400 000 руб.*"
+caption: "TIGGO 7 PRO PLUG-IN HYBRID – выгода до 1 400 000 руб.*"
+breadcrumb: "TIGGO 7 PRO PLUG-IN HYBRID – выгода до 1 400 000 руб.*"
+pubDate: "2025-06-24" # необязательно - дата публикации в формате YYYY-MM-DD, возможность планирования публикации
+toDate: true # необязательно - дата окончания акции в формате YYYY-MM-DD или true для показа последнего дня месяца
+image: "https://cdn.alexsab.ru/specials/chery/atkmotors-vostok/tiggo7pro-plug-in-hybrid/mobile.webp"
+description: "TIGGO 7 PRO PLUG-IN HYBRID – выгода до 1 400 000 руб.*"
+brand: Chery
+---
+import Button from '@/components/Button/Button.astro';
+import SpecialSalonsInfo from '@/components/SpecialSalonsInfo.astro';
+import settings from '@/data/settings.json';
+export const { site_name, phone_common } = settings;
+import { phoneFormat } from '@/js/utils/numbers.format';
+import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+
+export const dateFrom = '01.07.2024';
+export const dateTo = `${LAST_DAY}.${MONTH}.${YEAR}`;
+export const dateToGenitive = `${LAST_DAY} ${MONTH_GENITIVE} ${YEAR}`;
+export const dateToPrepositional = `${MONTH_PREPOSITIONAL} ${YEAR}`;
+
+<picture>
+	<source media="(min-width: 942px)" srcset="https://cdn.alexsab.ru/specials/chery/atkmotors-vostok/tiggo7pro-plug-in-hybrid/desktop.webp" />
+	<img src="https://cdn.alexsab.ru/specials/chery/atkmotors-vostok/tiggo7pro-plug-in-hybrid/mobile.webp" class="w-full mb-10" alt="TIGGO 7 PRO PLUG-IN HYBRID – выгода до 1 400 000 руб.*" />
+</picture>
+
+* Платеж от 12 743 руб./мес.*
+* Выгода до 1 400 000 ₽**
+* Действует программа «Семейный автомобиль»
+* Дополнительная выгода по трейд-ин до 200 000 ₽**
+* Сигнализация в подарок
+* Гарантия 8 лет
+
+<SpecialSalonsInfo dataFormName="Узнать выгоду. Выгода Chery до 1 400 000 руб." />

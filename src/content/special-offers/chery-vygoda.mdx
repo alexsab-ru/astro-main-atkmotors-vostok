@@ -1,42 +1,41 @@
 ---
-h1: ARRIZO 8 выгода до 650 000 ₽**
-title: ARRIZO 8 выгода до 650 000 ₽**
-caption: ARRIZO 8 выгода до 650 000 ₽**
-breadcrumb: ARRIZO 8 выгода до 650 000 ₽**
-pubDate: 2025-04-10
-toDate: false
-image: https://cdn.alexsab.ru/b/chery/img/special-offers/arrizo8-vygoda/thumb.webp
-description: ARRIZO 8 выгода до 650 000 ₽**
+h1: "Выгода до 1 400 000 руб.**"
+title: "Выгода до 1 400 000 руб.**"
+caption: "Выгода до 1 400 000 руб.**"
+breadcrumb: "Выгода до 1 400 000 руб.**"
+pubDate: "2025-06-24" # необязательно - дата публикации в формате YYYY-MM-DD, возможность планирования публикации
+toDate: true # необязательно - дата окончания акции в формате YYYY-MM-DD или true для показа последнего дня месяца
+image: "https://cdn.alexsab.ru/specials/chery/atkmotors-vostok/chery-vigoda/mobile.webp"
+description: "Выгода до 1 400 000 руб. Сигнализация в подарок! 10 автомобилей Chery на особых условиях"
+brand: Chery
 ---
-import FeedbackForm from '@/components/FeedbackForm/FeedbackForm.astro';
+import Button from '@/components/Button/Button.astro';
+import SpecialSalonsInfo from '@/components/SpecialSalonsInfo.astro';
+import settings from '@/data/settings.json';
+export const { site_name, phone_common } = settings;
+import { phoneFormat } from '@/js/utils/numbers.format';
 import { LAST_DAY, MONTH, MONTH_NOMINATIVE, MONTH_GENITIVE, MONTH_PREPOSITIONAL, YEAR } from '@/js/utils/date';
+import Timer from '@/components/Timer/Timer.astro';
 
 export const dateFrom = '01.06.2025';
 export const dateTo = `${LAST_DAY}.${MONTH}.${YEAR}`;
+export const timerendtime = `${YEAR}-${MONTH}-${LAST_DAY}T23:59:59+04:00`;
+export const dateToGenitive = `${LAST_DAY} ${MONTH_GENITIVE} ${YEAR}`;
+export const dateToPrepositional = `${MONTH_PREPOSITIONAL} ${YEAR}`;
 
 <picture>
-	<source media="(min-width: 768px)" srcset="https://cdn.alexsab.ru/b/chery/img/special-offers/arrizo8-vygoda/1.webp" />
-	<img src="https://cdn.alexsab.ru/b/chery/img/special-offers/arrizo8-vygoda/thumb.webp" class="mb-10 lg:mb-20 w-full lazy" alt="ARRIZO 8 выгода до 650 000 ₽" />
+	<source media="(min-width: 942px)" srcset="https://cdn.alexsab.ru/specials/chery/atkmotors-vostok/chery-vigoda/desktop.webp" />
+	<img src="https://cdn.alexsab.ru/specials/chery/atkmotors-vostok/chery-vigoda/mobile.webp" class="w-full mb-10" alt="Выгода Chery до 1 400 000 руб." />
 </picture>
 
-<p><strong>Спеццена на 5 а/м</strong></p>
+- Только до конца месяца!. Платеж от 9 187 руб./месяц!* 
+- Ставка 6% при минимальном первоначальном взносе.
+- 10 автомобилей Chery на особых условиях.
+- Сигнализация в подарок!**
 
-## Ваши уникальные преимущества:
-* Платеж от 11 585 руб./мес.*
-* Выгода до 650 000 ₽**
-* Действуем программа «Семейный автомобиль»
-* Дополнительная выгода по трейд-ин до 200 000 ₽**
-* Сигнализация в подарок
+<Timer subtitle='До повышения цен осталось:'title='Успейте зафиксировать вашу выгоду' btnName='Получить предложение' endtime={timerendtime} />
 
-
-**Подробности уточняйте у официальных дилеров CHERY. Выгоду по специальному предложению уточняйте у официальных дилеров.
-
-**Выгода при сдаче автомобиля в трейд-ин сочетается с предложением по приобретению автомобиля при помощи субсидированного кредита.
-
-
-<FeedbackForm title="Получить предложение" />
-<br />
-<br />
+<SpecialSalonsInfo dataFormName="Узнать выгоду. Выгода Chery до 1 400 000 руб." />
 
 >*Кредитная ставка от 5% до 9,90% достигается при первоначальном взносе в размере от 70% до 80% сроком на 7 лет. Кредит предоставляется ПАО "СОВКОМБАНК". Генеральная лицензия Банка России № 963 от 5 декабря 2014 г. Подробности уточняйте у менеджеров отдела продаж.
 

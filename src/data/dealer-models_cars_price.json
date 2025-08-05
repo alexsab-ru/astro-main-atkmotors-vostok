@@ -1,5 +1,11 @@
 [
   {
+    "brand": "CHERY",
+    "model": "TIGGO 4",
+    "price": 2089900,
+    "benefit": 260100
+  },
+  {
     "brand": "Changan",
     "model": "UNI-K",
     "price": 3399900,

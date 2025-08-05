@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "brand": "Changan",
+    "model": "UNI-K",
+    "price": 3399900,
+    "benefit": 0
+  },
+  {
+    "brand": "Changan",
+    "model": "UNI-T",
+    "price": 3239900,
+    "benefit": 0
+  },
+  {
+    "brand": "Chery",
+    "model": "TIGGO 4 PRO",
+    "price": 1649900,
+    "benefit": 450100
+  },
+  {
+    "brand": "Chery",
+    "model": "TIGGO 7L, I",
+    "price": 2639900,
+    "benefit": 470100
+  }
+]

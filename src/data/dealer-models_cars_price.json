@@ -25,6 +25,18 @@
   },
   {
     "brand": "Changan",
+    "model": "CS75PLUS",
+    "price": 2899900,
+    "benefit": 1050000
+  },
+  {
+    "brand": "Changan",
+    "model": "EADOplus",
+    "price": 2139900,
+    "benefit": 390000
+  },
+  {
+    "brand": "Changan",
     "model": "HUNTERplus",
     "price": 3239900,
     "benefit": 500000

@@ -20,38 +20,38 @@
   {
     "brand": "Changan",
     "model": "CS55PLUS",
-    "price": 2359900,
-    "benefit": 600000
-  },
-  {
-    "brand": "Changan",
-    "model": "CS75PLUS",
-    "price": 2899900,
-    "benefit": 1050000
-  },
-  {
-    "brand": "Changan",
-    "model": "EADOplus",
-    "price": 2139900,
-    "benefit": 370000
-  },
-  {
-    "brand": "Changan",
-    "model": "HUNTERplus",
-    "price": 3239900,
+    "price": 2459900,
     "benefit": 500000
   },
   {
     "brand": "Changan",
+    "model": "CS75PLUS",
+    "price": 3249900,
+    "benefit": 700000
+  },
+  {
+    "brand": "Changan",
+    "model": "EADOplus",
+    "price": 2109900,
+    "benefit": 400000
+  },
+  {
+    "brand": "Changan",
+    "model": "HUNTERplus",
+    "price": 3139900,
+    "benefit": 600000
+  },
+  {
+    "brand": "Changan",
     "model": "UNI-K",
-    "price": 3599900,
-    "benefit": 950000
+    "price": 3899900,
+    "benefit": 650000
   },
   {
     "brand": "Changan",
     "model": "UNI-T",
-    "price": 2589900,
-    "benefit": 650000
+    "price": 2749900,
+    "benefit": 490000
   },
   {
     "brand": "Chery",

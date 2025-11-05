@@ -1,6 +1,12 @@
 [
   {
     "brand": "CHERY",
+    "model": "ARRIZO 8",
+    "price": 2499000,
+    "benefit": 311000
+  },
+  {
+    "brand": "CHERY",
     "model": "TIGGO 4",
     "price": 1890000,
     "benefit": 330000
@@ -10,6 +16,12 @@
     "model": "TIGGO 9",
     "price": 3499900,
     "benefit": 650100
+  },
+  {
+    "brand": "Changan",
+    "model": "ALSVIN",
+    "price": 1450000,
+    "benefit": 400000
   },
   {
     "brand": "Changan",
@@ -43,6 +55,12 @@
   },
   {
     "brand": "Changan",
+    "model": "Lamore",
+    "price": 2419900,
+    "benefit": 450000
+  },
+  {
+    "brand": "Changan",
     "model": "UNI-K",
     "price": 4049900,
     "benefit": 500000
@@ -52,6 +70,12 @@
     "model": "UNI-T",
     "price": 2749900,
     "benefit": 490000
+  },
+  {
+    "brand": "Changan",
+    "model": "UNI-V",
+    "price": 2859900,
+    "benefit": 350000
   },
   {
     "brand": "Chery",
@@ -64,6 +88,12 @@
     "model": "TIGGO 7L",
     "price": 2349000,
     "benefit": 531000
+  },
+  {
+    "brand": "Chery",
+    "model": "TIGGO 8 PRO MAX",
+    "price": 2990000,
+    "benefit": 880000
   },
   {
     "brand": "Chery",

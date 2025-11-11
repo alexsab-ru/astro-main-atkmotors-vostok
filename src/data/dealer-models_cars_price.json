@@ -55,6 +55,12 @@
   },
   {
     "brand": "Changan",
+    "model": "HUNTERplus",
+    "price": 3519900,
+    "benefit": 220000
+  },
+  {
+    "brand": "Changan",
     "model": "Lamore",
     "price": 2419900,
     "benefit": 450000
@@ -68,7 +74,7 @@
   {
     "brand": "Changan",
     "model": "UNI-T",
-    "price": 2749900,
+    "price": 2679900,
     "benefit": 490000
   },
   {

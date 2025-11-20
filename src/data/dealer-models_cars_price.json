@@ -12,12 +12,6 @@
     "benefit": 330000
   },
   {
-    "brand": "CHERY",
-    "model": "TIGGO 9",
-    "price": 3499900,
-    "benefit": 650100
-  },
-  {
     "brand": "Changan",
     "model": "ALSVIN",
     "price": 1450000,
@@ -94,12 +88,6 @@
     "model": "TIGGO 7L",
     "price": 2349000,
     "benefit": 531000
-  },
-  {
-    "brand": "Chery",
-    "model": "TIGGO 8 PRO MAX",
-    "price": 2710000,
-    "benefit": 880000
   },
   {
     "brand": "Chery",

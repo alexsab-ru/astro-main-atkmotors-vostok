@@ -13,69 +13,57 @@
   },
   {
     "brand": "Changan",
-    "model": "ALSVIN",
-    "price": 1450000,
-    "benefit": 400000
-  },
-  {
-    "brand": "Changan",
     "model": "CS35PLUS NEW",
-    "price": 2119900,
-    "benefit": 620000
+    "price": 2489900,
+    "benefit": 100000
   },
   {
     "brand": "Changan",
     "model": "CS55PLUS",
-    "price": 2499900,
-    "benefit": 510000
+    "price": 2899900,
+    "benefit": 100000
   },
   {
     "brand": "Changan",
     "model": "CS75plus",
-    "price": 3249900,
-    "benefit": 700000
+    "price": 3799900,
+    "benefit": 150000
   },
   {
     "brand": "Changan",
     "model": "CS95",
-    "price": 3529900,
-    "benefit": 700000
+    "price": 4079900,
+    "benefit": 150000
   },
   {
     "brand": "Changan",
     "model": "EADOplus",
-    "price": 2109900,
-    "benefit": 400000
+    "price": 2429900,
+    "benefit": 100000
   },
   {
     "brand": "Changan",
     "model": "HUNTERplus",
-    "price": 3519900,
-    "benefit": 220000
-  },
-  {
-    "brand": "Changan",
-    "model": "Lamore",
-    "price": 2419900,
-    "benefit": 450000
+    "price": 3639900,
+    "benefit": 100000
   },
   {
     "brand": "Changan",
     "model": "UNI-K",
-    "price": 4099900,
-    "benefit": 500000
+    "price": 4499900,
+    "benefit": 100000
   },
   {
     "brand": "Changan",
     "model": "UNI-T",
-    "price": 2679900,
+    "price": 2749900,
     "benefit": 490000
   },
   {
     "brand": "Changan",
     "model": "UNI-V",
-    "price": 2909900,
-    "benefit": 350000
+    "price": 3159900,
+    "benefit": 100000
   },
   {
     "brand": "Chery",

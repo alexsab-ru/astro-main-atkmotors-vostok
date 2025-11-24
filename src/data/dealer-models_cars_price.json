@@ -13,6 +13,12 @@
   },
   {
     "brand": "Changan",
+    "model": "ALSVIN",
+    "price": 1750000,
+    "benefit": 100000
+  },
+  {
+    "brand": "Changan",
     "model": "CS35PLUS NEW",
     "price": 2489900,
     "benefit": 100000
@@ -38,13 +44,19 @@
   {
     "brand": "Changan",
     "model": "EADOplus",
-    "price": 2429900,
+    "price": 2409900,
     "benefit": 100000
   },
   {
     "brand": "Changan",
     "model": "HUNTERplus",
     "price": 3639900,
+    "benefit": 100000
+  },
+  {
+    "brand": "Changan",
+    "model": "Lamore",
+    "price": 2769900,
     "benefit": 100000
   },
   {

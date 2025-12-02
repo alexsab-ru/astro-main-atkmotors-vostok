@@ -1,17 +1,5 @@
 [
   {
-    "brand": "CHERY",
-    "model": "ARRIZO 8",
-    "price": 2499000,
-    "benefit": 311000
-  },
-  {
-    "brand": "CHERY",
-    "model": "TIGGO 4",
-    "price": 1890000,
-    "benefit": 330000
-  },
-  {
     "brand": "Changan",
     "model": "ALSVIN",
     "price": 1750000,
@@ -79,9 +67,15 @@
   },
   {
     "brand": "Chery",
+    "model": "ARRIZO 8",
+    "price": 2499000,
+    "benefit": 311000
+  },
+  {
+    "brand": "Chery",
     "model": "TIGGO 4",
     "price": 1749000,
-    "benefit": 300000
+    "benefit": 330000
   },
   {
     "brand": "Chery",

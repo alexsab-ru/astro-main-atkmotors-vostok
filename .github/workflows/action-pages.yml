@@ -8,7 +8,7 @@ name: Deploy website to Pages
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Запускается в 2 по гринвичу принулительно
+    - cron: '17 2 * * *'  # 02:17 UTC (05:17 МСК); :17 вместо :00 снижает очередь cron на GitHub
   # Кнопка «Опубликовать изменения» в панели управления (Repository Dispatch)
   repository_dispatch:
     types: [cp-rebuild]
@@ -39,6 +39,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
+      deploy_sha:
+        description: 'Точный SHA коммита для деплоя (служебный параметр)'
+        required: false
+        type: string
       send_specials:
         description: 'Отправить уведомление о датах окончания акций (TELEGRAM_TO_SPECIAL)'
         required: false
@@ -137,6 +141,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          # update_cars передаёт точный SHA, чтобы workflow_dispatch не взял
+          # предыдущий commit сразу после push. Для push/schedule/manual остаётся github.sha.
+          ref: ${{ github.event.inputs.deploy_sha || github.sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
